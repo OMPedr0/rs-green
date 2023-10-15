@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function postCreate() {
+export function postCreate() {
 
 
   return (
@@ -12,4 +12,3 @@ function postCreate() {
   );
 }     
 
-export default postCreate;

@@ -5,7 +5,7 @@ interface BackgroundProps {
   children: React.ReactNode; // Add children
 }
 
-const Background: React.FC<BackgroundProps> = ({ imageURL, children }) => {
+export const Background: React.FC<BackgroundProps> = ({ imageURL, children }) => {
   return (
     <div className="bg-gradient-to-b from-green1 to-green2 h-screen relative">
       <img
@@ -18,4 +18,3 @@ const Background: React.FC<BackgroundProps> = ({ imageURL, children }) => {
   );
 };
 
-export default Background;
