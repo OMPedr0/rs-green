@@ -1,6 +1,6 @@
 import { AuthProvider } from "@/api/auth";
 import React from "react";
-import Background from "../components/bg/background";
+import Background from "../components/bg/Background";
 import Registration from "@/api/register/page";
 
 
