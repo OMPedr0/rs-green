@@ -1,7 +1,7 @@
 import { AuthProvider } from "@/api/auth";
 import LoginUser from "@/api/login/page";
 import React from "react";
-import Background from "../components/bgtodos/bg/page";
+import Background from "../components/bgtodos/bg/bg";
 
 export default function Login() {
   return (
