@@ -106,7 +106,7 @@ const LoginUser = () => {
             <div className="mt-8 mb-6 text-center">
               <button
                 type="button"
-                className="w-full p-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-md shadow-md flex items-center justify-center"
+                className="w-full p-3 bg-blue hover:bg-blue1 text-white font-bold rounded-md shadow-md flex items-center justify-center"
                 onClick={handleGoogleLogin}
               >
                 <SiGmail className="mr-2 text-xl" />
@@ -123,7 +123,7 @@ const LoginUser = () => {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none"
+                  className="w-full p-3 bg-blue2 bg-opacity-50 text-xl rounded-md focus:bg-blue1 focus:outline-none"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -132,7 +132,7 @@ const LoginUser = () => {
                 <input
                   type="password"
                   placeholder="Password"
-                  className="w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none"
+                  className="w-full p-3 bg-blue2 bg-opacity-50 text-xl rounded-md focus:bg-blue1 focus:outline-none"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -140,7 +140,7 @@ const LoginUser = () => {
               <div className="mt-4">
                 <button
                   type="button"
-                  className="w-full p-3 bg-blue-500 hover-bg-blue-600 text-white font-bold rounded-md shadow-md"
+                  className="w-full p-3 bg-blue hover-bg-blue1 text-white font-bold rounded-md shadow-md"
                   onClick={handleLoginWithCredentials}
                 >
                   Login
@@ -159,7 +159,7 @@ const LoginUser = () => {
                 <input
                   type="text"
                   placeholder="Username"
-                  className="w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none"
+                  className="w-full p-3 bg-blue2 bg-opacity-50  text-xl rounded-md focus:bg-blue1 focus:outline-none"
                   value={userDetails.username}
                   onChange={(e) =>
                     setUserDetails({ ...userDetails, username: e.target.value })
@@ -170,7 +170,7 @@ const LoginUser = () => {
                 <input
                   type="text"
                   placeholder="First Name"
-                  className="w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none"
+                  className="w-full p-3 bg-blue2 bg-opacity-50 text-xl rounded-md focus:bg-blue1 focus:outline-none"
                   value={userDetails.firstName}
                   onChange={(e) =>
                     setUserDetails({ ...userDetails, firstName: e.target.value })
@@ -181,7 +181,7 @@ const LoginUser = () => {
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none"
+                  className="w-full p-3 bg-blue2 bg-opacity-50 text-xl rounded-md focus:bg-blue1 focus:outline-none"
                   value={userDetails.lastName}
                   onChange={(e) =>
                     setUserDetails({ ...userDetails, lastName: e.target.value })
@@ -191,7 +191,7 @@ const LoginUser = () => {
               <div className="mt-4">
                 <button
                   type="button"
-                  className="w-full p-3 bg-blue-500 hover-bg-blue-600 text-white font-bold rounded-md shadow-md"
+                  className="w-full p-3 bg-blue hover-bg-blue1 text-white font-bold rounded-md shadow-md"
                   onClick={handleQuestionnaireSubmit}
                 >
                   Submit

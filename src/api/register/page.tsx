@@ -81,7 +81,7 @@ const Registration = () => {
             <input
               type="text"
               placeholder="Username"
-              className={`w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none ${!username ? 'border-red-500' : ''}`}
+              className={`w-full p-3 bg-blue2 bg-opacity-50  text-xl rounded-md focus:bg-blue1 focus:outline-none ${!username ? 'border-red-500' : ''}`}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -93,7 +93,7 @@ const Registration = () => {
             <input
               type="email"
               placeholder="Email"
-              className={`w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none ${!email ? 'border-red-500' : ''}`}
+              className={`w-full p-3 bg-blue2 bg-opacity-50  text-xl rounded-md focus:bg-blue1 focus:outline-none ${!email ? 'border-red-500' : ''}`}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -106,7 +106,7 @@ const Registration = () => {
               <input
                 type="text"
                 placeholder="First Name"
-                className={`w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none ${!firstName ? 'border-red-500' : ''}`}
+                className={`w-full p-3 bg-blue2 bg-opacity-50  text-xl rounded-md focus:bg-blue1 focus:outline-none ${!firstName ? 'border-red-500' : ''}`}
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
@@ -118,7 +118,7 @@ const Registration = () => {
               <input
                 type="text"
                 placeholder="Last Name"
-                className={`w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none ${!lastName ? 'border-red-500' : ''}`}
+                className={`w-full p-3 bg-blue2 bg-opacity-50 text-xl rounded-md focus:bg-blue1 focus:outline-none ${!lastName ? 'border-red-500' : ''}`}
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
@@ -131,7 +131,7 @@ const Registration = () => {
             <input
               type="password"
               placeholder="Password"
-              className={`w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none ${!password ? 'border-red-500' : ''}`}
+              className={`w-full p-3 bg-blue2 bg-opacity-50 text-xl rounded-md focus:bg-blue1 focus:outline-none ${!password ? 'border-red-500' : ''}`}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -143,7 +143,7 @@ const Registration = () => {
             <input
               type="password"
               placeholder="Confirm Password"
-              className={`w-full p-3 bg-blue1 text-xl rounded-md focus:bg-blue1 focus:outline-none ${!confirmPassword ? 'border-red-500' : ''}`}
+              className={`w-full p-3 bg-blue2 bg-opacity-50 text-xl rounded-md focus:bg-blue1 focus:outline-none ${!confirmPassword ? 'border-red-500' : ''}`}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
@@ -154,7 +154,7 @@ const Registration = () => {
           <div className="mt-4">
             <button
               type="button"
-              className="w-full p-3 bg-blue-500 hover-bg-blue-600 text-white text-xl rounded-md shadow-md"
+              className="w-full p-3 bg-blue hover-bg-blue1 text-white text-xl rounded-md shadow-md"
               onClick={handleRegistration}
             >
               Register

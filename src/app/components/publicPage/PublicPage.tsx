@@ -1,11 +1,26 @@
+"use client"
+
 import React from 'react';
+import { useRouter } from 'next/navigation'; // Correct the import
 
 export function PublicPage() {
+  const router = useRouter();
+
+  const handleLoginClick = () => {
+    router.push('/login');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-bgpage to-bgpage1 flex flex-col text-white items-center">
       <div className="p-4 text-center">
         <h1 className="text-4xl font-extrabold">Rs Green</h1>
       </div>
+      <button
+            onClick={handleLoginClick}
+            className="bg-blue hover:bg-blue1 text-white font-bold py-2 px-4 rounded absolute top-0 right-0 m-4"
+          >
+            Go to Login
+          </button>
 
       <div className="flex-1 flex flex-col lg:flex-row items-center justify-center p-6 space-y-6 lg:space-y-0">
         <div className="lg:w-1/2 p-6">

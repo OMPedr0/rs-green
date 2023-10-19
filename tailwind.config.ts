@@ -41,9 +41,11 @@ const config: Config = {
         
 
 
+// Background Button
 
-
+        blue: '#0F766E',
         blue1: '#0F766E',
+        blue2: "#0F766E",
 
 
 

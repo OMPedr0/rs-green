@@ -18,7 +18,7 @@ export default function Home() {
 
   const handleAuthStateChanged = (user: any) => {
     if (user) {
-      // router.push("/feed"); 
+      router.push("/feed"); 
     }
   };
 
