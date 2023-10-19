@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect } from "react";
-import BackgroundFeed from "../components/bgtodos/bgfeed/page";
+import BackgroundFeed from "../components/bgtodos/bgfeed/bgfeed";
 import { NavBar } from "../components/navbar/navbar";
 
 
