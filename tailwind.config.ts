@@ -20,13 +20,40 @@ const config: Config = {
       },
       
       colors: {
-        green1: '#197C17',
-        green2: '#22350E',
-        green3: '',
+
+        // Background Colors
+
+        bg: "#22C55E",
+        bg1:"#15803D",
+        bg2:"#14532D",
+        bg3:"#",
+        bg4:"#",
+        bg5:"#",
+
+        bgpage: "#197C17",
+        bgpage1:  "#37511C",
+        bgpage2: "#22350E",
+        bgpage3: "#1C1C1C",
+
+
+
+
+        
+
+
+
 
         blue1: '#0F766E',
 
-        gray1:'#AFAFAF',
+
+
+
+        // Text Colors
+        text:'#FFFFFF',
+        text1:'#AEAEAE',
+        text2:'#525050',
+        text3:'#787777',
+        text4:'#292929',
 
 
     

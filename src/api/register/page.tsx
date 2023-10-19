@@ -60,7 +60,7 @@ const Registration = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-green1 to-green2 relative">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-bgpage to-bgpage2 relative">
       <div className="fixed top-5 right-5">
         <ToastContainer
           position="top-right" // Position at the top-right corner
@@ -74,7 +74,7 @@ const Registration = () => {
           pauseOnHover
         />
       </div>
-      <div className="w-full mx-auto p-4 bg-gray1 bg-opacity-5 bg-custom-opacity rounded-lg shadow-lg lg:max-w-xl">
+      <div className="w-full mx-auto p-4 bg-text bg-opacity-5 bg-custom-opacity rounded-lg shadow-lg lg:max-w-xl">
         <h1 className="text-4xl text-center mb-4 font-inria text-white">Registration</h1>
         <div className="mt-4 p-4 rounded-lg">
           <div className="mb-4">

@@ -101,7 +101,7 @@ const LoginUser = () => {
       <ToastContainer />
       {isAnsweringInfo ? null : (
         <div className="relative flex flex-col justify-center min-h-screen">
-          <div className="w-full mx-auto p-4 bg-gray1 bg-opacity-5 bg-custom-opacity rounded-lg shadow-lg lg:max-w-xl">
+          <div className="w-full mx-auto p-4 bg-text bg-opacity-5 bg-custom-opacity rounded-lg shadow-lg lg:max-w-xl">
             <h1 className="text-4xl text-center mb-4 font-inria text-white">Login</h1>
             <div className="mt-8 mb-6 text-center">
               <button
@@ -152,7 +152,7 @@ const LoginUser = () => {
       )}
       {isAnsweringInfo && !userDocumentExists && (
         <div className="relative flex flex-col justify-center min-h-screen">
-        <div className="w-full mx-auto p-4 bg-gray1 bg-opacity-5 bg-custom-opacity rounded-lg shadow-lg lg:max-w-xl">
+        <div className="w-full mx-auto p-4 bg-text bg-opacity-5 bg-custom-opacity rounded-lg shadow-lg lg:max-w-xl">
             <h1 className="text-4xl text-center mb-4 font-inria text-white">User Details</h1>
             <div className="mt-4 p-4 rounded-lg">
               <div className="mb-4">
