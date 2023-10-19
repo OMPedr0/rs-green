@@ -1,11 +1,10 @@
 import React from 'react';
 
 interface BackgroundFeedProps {
-  imageURL: string;
   children: React.ReactNode;
 }
 
-const BackgroundFeed: React.FC<BackgroundFeedProps> = ({ imageURL, children }) => {
+const BackgroundFeed: React.FC<BackgroundFeedProps> = ({children }) => {
   return (
     <div className="bg-gradient-to-b from-bgpage1 to-bgpage3 h-screen relative">
       <img
