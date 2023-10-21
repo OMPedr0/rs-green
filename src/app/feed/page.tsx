@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import BackgroundFeed from "../components/bgtodos/bgfeed/bgfeed";
 import { NavBar } from "../components/navbar/navbar";
 
@@ -9,9 +9,11 @@ import { auth, db } from "@/api/firebaseConfig";
 
 import { onAuthStateChanged } from 'firebase/auth';
 import { collection, where, query, getDocs, updateDoc } from 'firebase/firestore';
+import { PostCreate } from "../components/posts/create/post";
 
 
 export default function Feed() {
+  const [showPostCreate, setShowPostCreate] = useState(false);
 
   useEffect(() => {
 
@@ -43,14 +45,24 @@ export default function Feed() {
   }, []);
   
   
+  const handleShowPostCreate = () => {
+    setShowPostCreate(true);
+  };
+
 
 
   return (
-    <BackgroundFeed >
-      <div className="relative">
-        <NavBar />
+    <div className="relative">
+      <BackgroundFeed>
+      <NavBar handleShowPostCreate={handleShowPostCreate} />
 
-      </div>
-    </BackgroundFeed>
+        {showPostCreate && (
+          <div className="post-create-modal">
+            <PostCreate onClose={() => setShowPostCreate(false)} />
+          </div>
+        )}
+      </BackgroundFeed>
+    </div>
   );
+  
 }

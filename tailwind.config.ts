@@ -35,20 +35,11 @@ const config: Config = {
         bgpage2: "#22350E",
         bgpage3: "#1C1C1C",
 
-
-
-
-        
-
-
 // Background Button
 
         blue: '#0F766E',
         blue1: '#0F766E',
         blue2: "#0F766E",
-
-
-
 
         // Text Colors
         text:'#FFFFFF',
