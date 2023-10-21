@@ -76,8 +76,8 @@ export function PostCreate({ onClose }: { onClose: () => void }) {
   }
 
   return (
-    <div className={`fixed top-1/3 left-1/2  transform -translate-x-1/2 -translate-y-1/2 bg-text2 bg-opacity-25 p-8 rounded-lg shadow-lg z-50 mt-4 ${post.imgs.length > 0 ? 'h-auto' : 'h-[28rem]'}`}>
-    <h2 className="text-2xl font-semibold mb-4">Criar um novo post</h2>
+   <div className={`fixed top-1/4 left-1/2 mt-8 transform -translate-x-1/2 -translate-y-1/2 bg-text2 bg-opacity-25 p-8 rounded-lg shadow-lg z-50 max-h-screen h-auto transition-height duration-300 ease-in-out overflow-y-auto ${post.imgs.length > 0 ? 'h-auto mt-24' : 'h-[30rem]'}`}>
+      <h2 className="text-2xl font-semibold mb-4">Criar um novo post</h2>
 
       <div className="mb-4 flex justify-between">
         <input
@@ -86,20 +86,21 @@ export function PostCreate({ onClose }: { onClose: () => void }) {
           placeholder="Nome"
           value={post.nome}
           onChange={handleInputChange}
-          className="w-1/2 p-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
+          className="w-1/2 p-2 border rounded bg-text1 focus:outline-none focus:ring-2 ring-bg1 ring-opacity-25 focus:border-bg1 placeholder:text-text3"
         />
+
         <select
           name="categoria"
           value={post.categoria}
           onChange={handleCategoriaChange}
-          placeholder="Escolha a categoria"
-          className="w-1/2 ml-2 gap-2 p-2 border rounded text-text2 focus:outline-none focus:ring focus:border-blue-300"
+          className="w-1/2 ml-2 gap-2 p-2 border rounded bg-text1 focus:outline-none focus:ring-2 ring-bg1 ring-opacity-25 focus:border-bg1 text-text3 placeholder-text-text3"
         >
-          <option value="" disabled className='text-text2'>Selecione uma categoria</option>
-          <option value="categoria1" className='text-text2'>Categoria 1</option>
-          <option value="categoria2" className='text-text2'>Categoria 2</option>
-          <option value="categoria3" className='text-text2'>Categoria 3</option>
+          <option value="" disabled hidden>Escolha a categoria</option>
+          <option value="categoria1">Categoria 1</option>
+          <option value="categoria2">Categoria 2</option>
+          <option value="categoria3">Categoria 3</option>
         </select>
+
       </div>
 
       <textarea
@@ -107,44 +108,39 @@ export function PostCreate({ onClose }: { onClose: () => void }) {
         placeholder="Descrição"
         value={post.descricao}
         onChange={handleInputChange}
-        className="w-full p-2 mb-4 border rounded focus:outline-none focus:ring focus:border-blue-300"
+        className="w-full p-2 mb-4 h-40 order rounded bg-text1 focus:outline-none focus:ring-2 ring-bg1 ring-opacity-25 focus:border-bg1  placeholder:text-text3"
       />
 
-      <div {...getRootProps()} className="dropzone w-full p-2 mb-4 border rounded focus:outline-none focus:ring focus:border-blue-300">
+
+      <div {...getRootProps()} className="dropzone w-full p-2 mb-4 border rounded focus:outline-none focus:ring-2 ring-bg1 ring-opacity-25 focus:border-bg1 ">
         <input {...getInputProps()} />
         <p>Arraste e solte algumas imagens ou clique para selecionar.</p>
       </div>
 
 
       <div className="mb-4 max-w-lg mx-auto">
-  {post.imgs.length ? (
-    <Slider {...settings} slidesToShow={post.imgs.length > 2 ? 3 : post.imgs.length}>
-      {post.imgs.map((file, index) => (
-        <div key={index} className="relative">
-          <div className="w-40 h-40 relative">
-            <img
-              src={URL.createObjectURL(file)}
-              alt="Imagem selecionada"
-              className="w-full h-full object-cover rounded-lg shadow-md m-1"
-            />
-            <button
-              onClick={() => handleRemoveImage(index)}
-              className="absolute top-0 right-0 m-1 bg-red-500 text-white px-2 py-1 rounded-full hover:bg-red-600 transition duration-300 ease-in-out flex items-center justify-center"
-            >
-              <FaTrash /> {/* Ícone de lixo do react-icons */}
-            </button>
-          </div>
-        </div>
-      ))}
-    </Slider>
-  ) : null}
-</div>
-
-
-
-
-
-
+        {post.imgs.length ? (
+          <Slider {...settings} slidesToShow={post.imgs.length > 2 ? 3 : post.imgs.length}>
+            {post.imgs.map((file, index) => (
+              <div key={index} className="relative">
+                <div className="w-40 h-40 relative">
+                  <img
+                    src={URL.createObjectURL(file)}
+                    alt="Imagem selecionada"
+                    className="w-full h-full object-cover rounded-lg shadow-md m-1"
+                  />
+                  <button
+                    onClick={() => handleRemoveImage(index)}
+                    className="absolute top-0 right-0 m-1 bg-red-500 text-white px-2 py-1 rounded-full hover:bg-red-600 transition duration-300 ease-in-out flex items-center justify-center"
+                  >
+                    <FaTrash /> {/* Ícone de lixo do react-icons */}
+                  </button>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        ) : null}
+      </div>
 
       <div className="flex justify-end">
         <button

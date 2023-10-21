@@ -87,7 +87,7 @@ export function NavBar({ handleShowPostCreate }: NavBarProps) {
         </button>
       </div>
       <div className="my-6">
-        <button className="flex items-center text-3xl bg-text2 p-4 rounded gap-4" onClick={handleShowLogout}>
+        <button className="flex items-center text-3xl bg-text2 p-4 rounded gap-2" onClick={handleShowLogout}>
           <img src={userData?.userLogo} alt="User Logo" className="w-12 h-12 rounded-full mr-4" />
           <div className="flex flex-col">
             <span className="text-xl">{`${userData?.firstName} ${userData?.lastName}`}</span>
@@ -96,7 +96,7 @@ export function NavBar({ handleShowPostCreate }: NavBarProps) {
         </button>
       </div>
       {showLogout && (
-        <div className="my-6">
+        <div className="my-4">
           <div className="bg-text2 rounded-lg shadow-lg p-4">
             <div className="flex items-center mb-4">
               <img src={userData?.userLogo} alt="User Logo" className="w-12 h-12 rounded-full mr-4" />
