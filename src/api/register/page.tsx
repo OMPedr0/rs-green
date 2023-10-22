@@ -43,6 +43,7 @@ const Registration = () => {
           email,
           firstName,
           lastName,
+          user_id: auth.currentUser?.uid,
         });
 
         toast.success("Registration successful!");

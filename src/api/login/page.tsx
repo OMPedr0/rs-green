@@ -25,6 +25,7 @@ interface UserDetails {
   firstName: string;
   lastName: string;
   email: string;
+  user_id:string;
 }
 
 const LoginUser = () => {
@@ -36,6 +37,7 @@ const LoginUser = () => {
     firstName: "",
     lastName: "",
     email: "",
+    user_id:"",
   });
 
   const [isAnsweringInfo, setIsAnsweringInfo] = useState(false);
@@ -60,6 +62,7 @@ const LoginUser = () => {
             firstName: "",
             lastName: "",
             email:  user.email,
+            user_id: user.uid || '',
           });
 
           setIsAnsweringInfo(true);
