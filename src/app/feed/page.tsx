@@ -5,6 +5,8 @@ import BackgroundFeed from "../components/bgtodos/bgfeed/bgfeed";
 import { NavBar } from "../components/navbar/navbar";
 
 
+
+
 import { auth, db } from "@/api/firebaseConfig";
 
 import { onAuthStateChanged } from 'firebase/auth';
@@ -18,7 +20,7 @@ interface Post {
   categoria: string;
   descricao: string;
   likes: number;
-  userLogo:string;
+  userLogo: string;
   userName: string;
   imageURLs: string[]; // Agora, imageURLs é uma matriz de URLs das imagens
   // Adicione outras propriedades do post conforme necessário
@@ -81,7 +83,7 @@ export default function Feed() {
         categoria: doc.data().categoria, // Use doc.data().categoria para obter a categoria do Firestore
         descricao: doc.data().descricao, // Use doc.data().descricao para obter a descrição do Firestore
         imageURLs: doc.data().imgs,
-        userName: doc.data().userName ,
+        userName: doc.data().userName,
         userLogo: doc.data().userLogo,
         likes: doc.data().likes, // Use doc.data().imgs para obter as imagens do Firestore
       };
@@ -93,17 +95,19 @@ export default function Feed() {
 
 
   useEffect(() => {
-    // Lógica para buscar os posts somente se ainda não foram buscados
     if (!postsFetched) {
       const fetchPosts = async () => {
         const postsData = await fetchPostsFromFirestore();
         setPosts(postsData);
-        setPostsFetched(true); // Marque os dados como buscados
+        
+        setPostsFetched(true); 
       };
       fetchPosts();
     }
   }, [postsFetched]);
 
+
+  console.log(posts)
 
   return (
     <BackgroundFeed>
@@ -116,21 +120,17 @@ export default function Feed() {
           </div>
         )}
 
-{
-  !showPostCreate && (
-    <div className="fixed top-0 left-1/3 max-h-screen overflow-y-auto overflow-hidden">
-      <div className="flex flex-col items-center">
-        {posts.map((post) => (
-          <div key={post.id} className="mb-4">
-            <PostCard post={post} />
+        {!showPostCreate && (
+          <div className="fixed top-0 left-1/3 max-h-screen overflow-y-auto overflow-hidden">
+            <div className="flex flex-col items-center">
+              {posts.map((post) => (
+                <div key={post.id} className="mb-4">
+                      <PostCard post={post} />
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-
+        )}
 
       </div>
     </BackgroundFeed>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaThumbsUp, FaComment, FaShare } from 'react-icons/fa'; // Importe os ícones desejados
 import { ImageCard } from '../ImageCard/ImageCard';
+import Link from 'next/link';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -13,8 +14,7 @@ interface Post {
   likes: number;
   userLogo:string;
   userName: string;
-  imageURLs?: string[]; // Agora, imageURLs é uma matriz de URLs das imagens
-  // Adicione outras propriedades do post conforme necessário
+  imageURLs?: string[]; 
 }
 
 interface PostCardProps {
@@ -53,8 +53,10 @@ export function PostCard({ post }: PostCardProps) {
   return (
     <div className="flex mt-8 justify-center w-full h-full">
       <div className="bg-text2 bg-opacity-25 max-w-screen-xl p-8 rounded-lg shadow-lg" style={{ width: '700px', height: '500px', overflowY: 'auto' }}>
-        <div className="flex items-center justify-between">
+      <Link href={`/feed/${post.id}`}>
+        <div className="flex items-center justi-fy-between">
           <div className="flex items-center">
+            
             <img
               src={post.userLogo}
               alt="Logo do Usuário"
@@ -64,6 +66,7 @@ export function PostCard({ post }: PostCardProps) {
               <p className="text-lg font-semibold">{post.userName} </p>
             </div>
           </div>
+          
           <button className="text-blue-500 flex flex-row items-center">
             <FaShare className="mr-2" /> Compartilhar
           </button>
@@ -96,6 +99,7 @@ export function PostCard({ post }: PostCardProps) {
                 </div>
               ))}
             </Slider>
+
             <div className="text-gray-600 mt-2">
               <span className="mr-2 text-text">{likes} Curtidas</span>
               <span className="text-text"> Comentários</span>
@@ -103,7 +107,7 @@ export function PostCard({ post }: PostCardProps) {
           </div>
         )}
 
-
+</Link>
         {/* {isImageCardOpen && post.imageURLs && (
           <ImageCard imageUrl={post.imageURLs[selectedImageIndex]} closeImageCard={closeImageCard} />
         )}
